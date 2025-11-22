@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+{% block title %}CRODE | Home{% endblock %}
+
+{% block content %}
+<div class="row align-items-center">
+  <div class="col-lg-7">
+    <h1 class="display-5 fw-bold mb-3 text-white">
+      Infra · Network · Automation
+    </h1>
+    <p class="lead mb-4 page-subtitle">
+      데이터센터 Ops 경험을 바탕으로, 실제 현장에서 나온 문제를
+      자동화·문서화·시각화로 푸는 시스템/네트워크 엔지니어
+      <strong>100byte</strong>의 포트폴리오 허브입니다.
+    </p>
+
+    <div class="d-flex gap-3">
+      <a href="{% url 'projects' %}" class="btn btn-success btn-lg">
+        View Projects
+      </a>
+      <a href="{% url 'about' %}" class="btn btn-outline-light btn-lg">
+        About Me
+      </a>
+    </div>
+  </div>
+
+  <div class="col-lg-5 mt-4 mt-lg-0">
+    <div class="p-4 card-dark">
+      <h2 class="h5 mb-3">Highlight</h2>
+      <ul class="mb-0">
+        <li>VCC – IDC 출입/자산 컴플라이언스 자동화 도구</li>
+        <li>NetDocs – 네트워크/IDC 문서화 템플릿 & 위키 구조</li>
+        <li>DoTree – 작업·프로젝트 관리 시스템 (Django)</li>
+      </ul>
+    </div>
+  </div>
+</div>
+{% endblock %}

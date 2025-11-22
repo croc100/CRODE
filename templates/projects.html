@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+{% block title %}CRODE | Projects{% endblock %}
+
+{% block content %}
+<h1 class="page-title">Projects</h1>
+<p class="page-subtitle">
+  실제 IDC 운영 환경에서 나온 문제를 해결하기 위해 만든 프로젝트들입니다.
+</p>
+
+<div class="row g-4">
+  <div class="col-md-6">
+    <div class="p-4 card-dark h-100">
+      <h2 class="h5 mb-2">VCC (VMS Compliance Checker)</h2>
+      <p class="mb-2">
+        VMS, 출입대장, 카드키 권한 매트릭스를 자동 대조하여
+        무권한 출입/반입 누락/기록 누락을 찾아주는 IDC 전용 컴플라이언스 툴.
+      </p>
+      <p class="mb-1"><strong>Tech</strong>: Python, pandas, Tkinter, Excel</p>
+    </div>
+  </div>
+
+  <div class="col-md-6">
+    <div class="p-4 card-dark h-100">
+      <h2 class="h5 mb-2">NetDocs</h2>
+      <p class="mb-2">
+        네트워크/IDC 환경에서 바로 사용할 수 있는 문서 템플릿과
+        위키 구조를 제공하는 문서화 플랫폼.
+      </p>
+      <p class="mb-1"><strong>Tech</strong>: Django(예정), Markdown, Wiki 설계</p>
+    </div>
+  </div>
+
+  <div class="col-md-6">
+    <div class="p-4 card-dark h-100">
+      <h2 class="h5 mb-2">DoTree</h2>
+      <p class="mb-2">
+        기획 → 구현 → 운영 → 회고까지 작업 흐름을 한눈에 볼 수 있는
+        작업·프로젝트 관리 시스템.
+      </p>
+      <p class="mb-1"><strong>Tech</strong>: Django, MySQL</p>
+    </div>
+  </div>
+
+  <div class="col-md-6">
+    <div class="p-4 card-dark h-100">
+      <h2 class="h5 mb-2">R2K / Auto Reels Factory</h2>
+      <p class="mb-2">
+        실시간 트렌드를 자동 수집하고 스크립트·TTS·릴스 영상까지
+        자동 생성/업로드하는 콘텐츠 자동화 파이프라인.
+      </p>
+      <p class="mb-1"><strong>Tech</strong>: Python, ffmpeg, TTS, API 연동</p>
+    </div>
+  </div>
+</div>
+{% endblock %}
