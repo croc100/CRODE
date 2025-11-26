@@ -1,6 +1,6 @@
 # CRODE
 
-**CRODE** is 100byte’s main portfolio hub — a central gateway to my work in  
+**CRODE** is croc100’s main portfolio hub — a central gateway to my work in  
 **Infra · Network · Automation**.
 
 Inspired by Supabase’s clean, minimal layout, CRODE serves as a curated space  
@@ -24,6 +24,6 @@ Think of CRODE as my **digital business card + technical identity**.
 
 ## License / Usage
 
-© 2025 **CRODE** — Built by 100byte.  
+© 2025 **CRODE** — Built by croc100.  
 All content in this repository is provided for personal portfolio and identity purposes.  
 Commercial redistribution or reuse without permission is not allowed.
