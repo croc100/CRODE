@@ -1,0 +1,175 @@
+{% load static %}
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>CRODE</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="{% static 'css/style.css' %}" rel="stylesheet">
+  </head>
+  <body>
+    <div class="hero-glow"></div>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-transparent fixed-top linear-nav py-3">
+      <div class="container">
+        <a class="navbar-brand fw-bold fs-4 d-flex align-items-center" href="/">
+            <img src="{% static 'img/img.png' %}" alt="CRODE" width="28" height="28" class="me-2 rounded-1" style="object-fit: cover;"> 
+            <span style="letter-spacing: -0.02em; color: var(--linear-heading);">CRODE</span>
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto gap-3">
+            <li class="nav-item"><a class="nav-link" href="#">Projects</a></li>
+            <li class="nav-item"><a class="nav-link" href="{% url 'lab' %}">Lab</a></li>
+            <li class="nav-item"><a class="nav-link" href="#">Lib</a></li>
+            <li class="nav-item ms-lg-3">
+        <button class="btn btn-sm btn-outline-light px-3">Contact</button></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <main class="main-content text-center container">
+      <section class="hero py-5 mt-5">
+        <div class="mb-4">
+          <span class="notice-badge" style="background: rgba(118, 131, 251, 0.1); border: 1px solid var(--linear-primary); color: var(--linear-primary); padding: 4px 12px; border-radius: 20px; font-size: 0.75rem; font-weight: 600;">Roadmap</span>
+          <span class="ms-2 text-white-50 small" style="font-family: 'JetBrains Mono';">v1.0.0-alpha</span>
+        </div>
+        <h1 class="display-1 text-white fw-bold linear-heading mb-4">
+            Building Systems,<br>Archiving Thoughts.
+        </h1>
+        <p class="lead linear-subheading mb-5">
+            아이디어를 시스템으로 설계하고, 기록으로 박제합니다.<br>
+            <span style="color: var(--linear-text-dim);">CRODE는 1인 기업의 기민함과 엔지니어링의 정교함을 제공합니다.</span>
+        </p>
+      </section>
+
+      <section class="notice-section mb-5">
+        <div class="linear-card p-4 mx-auto text-start" style="max-width: 800px; border-left: 2px solid var(--linear-primary);">
+          <div class="mb-2 text-accent" style="font-size: 0.7rem;">[SYSTEM_LOG_20260330]</div>
+          <h5 class="text-white mb-3 fw-bold">Roadmap Update: Public Release Preparation</h5>
+          <div class="notice-text">
+            <p class="mb-3">아이디어를 시스템으로 박제하는 여정이 시작되었습니다.</p>
+            <p class="mb-0 text-white-50">
+              현재 <span class="text-white fw-bold">setpoint.kr</span>을 포함한 주요 모듈의 공개 배포를 준비 중입니다. 
+              각 모듈은 엄격한 시스템 최적화와 보안 검증을 거쳐 공개될 예정입니다.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="features py-5">
+        <div class="row row-cols-1 row-cols-md-3 g-4 text-start">
+          <div class="col">
+            <div class="card linear-card bg-transparent text-white p-4 h-100">
+              <div class="card-body p-0">
+                <div class="mb-3 text-accent" style="font-size: 0.75rem;">01 / SERVICE</div>
+                <h5 class="card-title fw-bold mb-3">setpoint.kr</h5>
+                <p class="card-text text-muted">데이터 기반 커뮤니티 큐레이션 엔진. 파편화된 정보를 시스템으로 통합하여 새로운 통찰을 제공합니다.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card linear-card bg-transparent text-white p-4 h-100">
+              <div class="card-body p-0">
+                <div class="mb-3 text-accent" style="font-size: 0.75rem;">02 / MEDIA</div>
+                <h5 class="card-title fw-bold mb-3">Interactive Media</h5>
+                <p class="card-text text-muted">r2k 및 tetris 프로젝트. 사용자와 기술의 접점에서 발생하는 인터랙티브한 경험을 실험합니다.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card linear-card bg-transparent text-white p-4 h-100">
+              <div class="card-body p-0">
+                <div class="mb-3 text-accent" style="font-size: 0.75rem;">03 / INFRA</div>
+                <h5 class="card-title fw-bold mb-3">PaaS & Security</h5>
+                <p class="card-text text-muted">Zero Trust 기반 아키텍처 설계. Virus-wall기반의 견고한 보안 시스템을 구축합니다.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="spotlight-section py-5 mt-5 text-start border-top border-secondary border-opacity-25">
+        <div class="row align-items-center py-5">
+          <div class="col-lg-5 mb-5 mb-lg-0">
+            <h2 class="text-white fw-bold mb-4" style="letter-spacing: -0.03em;">Engineered for<br>Absolute Control.</h2>
+            <p class="mb-4" style="line-height: 1.7; color: var(--linear-text); font-size: 1.05rem;">
+              CRODE의 모든 인프라는 외부의 개입을 최소화한 <span class="text-white fw-bold">독립적인 환경</span>에서 구동됩니다. 
+              <span class="text-white fw-bold">On-premise</span>와 <span class="text-white fw-bold">Cloud</span>를 연결하는 Multi-node 아키텍처 위에, 
+              <span class="text-accent fw-bold">Virus-wall 기반</span>의 철저한 <span class="text-white fw-bold">Zero Trust 보안</span>이 적용되어 있습니다.
+            </p>
+            <ul class="list-unstyled" style="font-family: 'JetBrains Mono', monospace; font-size: 0.9rem;">
+              <li class="mb-2"><span class="text-accent fw-bold me-2">✓</span><span class="text-white">Multi-Cloud Architecture</span></li>
+              <li class="mb-2"><span class="text-accent fw-bold me-2">✓</span><span class="text-white">Hardware-backed SSH (ed25519-sk)</span></li>
+              <li class="mb-2"><span class="text-accent fw-bold me-2">✓</span><span class="text-white">Automated CI/CD Pipelines</span></li>
+            </ul>
+          </div>
+          <div class="col-lg-7">
+            <div class="terminal-window linear-card p-0 overflow-hidden">
+              <div class="terminal-header d-flex align-items-center px-3 py-2" style="background: rgba(255,255,255,0.05); border-bottom: 1px solid var(--border-color);">
+                <div class="d-flex gap-2">
+                  <div class="rounded-circle" style="width: 12px; height: 12px; background: #FF5F56;"></div>
+                  <div class="rounded-circle" style="width: 12px; height: 12px; background: #FFBD2E;"></div>
+                  <div class="rounded-circle" style="width: 12px; height: 12px; background: #27C93F;"></div>
+                </div>
+                <div class="mx-auto text-muted small" style="font-family: 'JetBrains Mono'; font-size: 0.75rem;">crode@node ~</div>
+              </div>
+              <div class="terminal-body p-4" style="font-family: 'JetBrains Mono', monospace; font-size: 0.85rem; color: #E1E1E1; background: #000000;">
+                <div class="mb-2"><span style="color: #27C93F;">crode@client</span><span style="color: #5E6AD2;">:~$</span> ssh root@crode-node.net</div>
+              
+                <div class="mb-2 text-muted">Intercepted by CRODE Virus-Wall Gateway...</div>
+                <div class="mb-1" style="color: #FFBD2E;">[Virus-Wall] Running Zero Trust posture check... <span style="color: #27C93F;">PASS</span></div>
+                <div class="mb-3" style="color: #FFBD2E;">[Virus-Wall] Traffic signature analysis... <span style="color: #27C93F;">CLEAN</span></div>
+              
+                <div class="mb-2"><span style="color: #27C93F;">Connection established via secure tunnel.</span></div>
+                <div class="mb-2">Last login: Tue Mar 31 12:45:00 2026 from 10.0.0.5</div>
+                <div class="mb-2"><span style="color: #5E6AD2;">root@crode-node</span><span style="color: #fff;">:~#</span> docker ps | grep setpoint</div>
+              
+                <div><span class="text-muted">b8a92f...   crode/setpoint:latest   "python manage.py..."   Up 4 days   0.0.0.0:8000->8000/tcp</span></div>
+              
+                <span class="cursor-blink" style="display: inline-block; width: 8px; height: 15px; background: #fff; vertical-align: middle; margin-top: 10px;"></span>
+              </div>            
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="tech-stack py-5 border-top border-secondary border-opacity-25">
+        <p class="text-center mb-4 small fw-bold" style="letter-spacing: 0.1em; text-transform: uppercase; color: var(--linear-text);">Powered by Modern Stack</p>
+        <div class="d-flex flex-wrap justify-content-center gap-3">
+          <span class="tech-badge">Backend</span>
+          <span class="tech-badge">Docker</span>
+          <span class="tech-badge">Cloud</span>
+          <span class="tech-badge">On-Premise</span>
+          <span class="tech-badge">Network Security</span>
+        </div>
+      </section>
+
+      <section class="bottom-cta py-5 my-5">
+        <h2 class="display-4 fw-bold mb-4 linear-heading" style="letter-spacing: -0.03em;">Ready to build<br>the next system?</h2>
+        
+        <p class="mb-5" style="color: var(--linear-text); font-size: 1.1rem;">
+          <span class="text-white fw-bold">CRODE</span>는 언제나 새로운 아이디어를 박제할 준비가 되어있습니다.
+        </p>
+        <a href="{% url 'lab' %}" class="btn btn-lg linear-btn-primary px-5 py-3" style="border-radius: 30px;">Go to Lab</a>      </section>
+
+    </main>
+
+    <footer class="container py-4 border-top border-secondary border-opacity-25">
+        <div class="d-flex justify-content-between align-items-center">
+            <span class="footer-text small">© 2026 CRODE Lab. All rights reserved.</span>
+            <div class="d-flex gap-3">
+                <a href="https://github.com/croc100/CRODE" target="_blank" class="footer-link small">GitHub</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="{% static 'js/main.js' %}"></script>
+  </body>
+</html>

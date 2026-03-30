@@ -1,0 +1,112 @@
+{% load static %}
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>CRODE Lab | The Interactive Sandbox</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="{% static 'css/style.css' %}" rel="stylesheet">
+  </head>
+  <body>
+    <div class="hero-glow"></div>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-transparent fixed-top linear-nav py-3">
+      <div class="container">
+        <a class="navbar-brand fw-bold fs-4 d-flex align-items-center" href="/">
+            <img src="{% static 'img/img.png' %}" alt="CRODE" width="28" height="28" class="me-2 rounded-1" style="object-fit: cover;"> 
+            <span style="letter-spacing: -0.02em; color: var(--linear-heading);">CRODE</span>
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto gap-3">
+            <li class="nav-item"><a class="nav-link" href="#">Projects</a></li>
+            <li class="nav-item"><a class="nav-link text-white fw-bold" href="/lab">Lab</a></li> <li class="nav-item"><a class="nav-link" href="#">Lib</a></li>
+            <li class="nav-item ms-lg-3"><button class="btn btn-sm btn-outline-light px-3">Contact</button></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <main class="main-content text-center container">
+      <section class="hero py-5 mt-5">
+        <div class="mb-4">
+          <span class="notice-badge" style="background: rgba(39, 201, 63, 0.1); border: 1px solid #27C93F; color: #27C93F; padding: 4px 12px; border-radius: 20px; font-size: 0.75rem; font-weight: 600;">Interactive Sandbox</span>
+        </div>
+        <h1 class="display-1 text-white fw-bold linear-heading mb-4" style="letter-spacing: -0.04em;">
+            Where Code Meets<br>Interaction.
+        </h1>
+        <p class="lead linear-subheading mb-5">
+            사용자와 기술의 접점에서 발생하는 인터랙티브한 경험을 실험합니다.<br>
+            <span style="color: var(--linear-text-dim);">이곳의 프로젝트들은 완성을 향한 과정이거나, 순수한 호기심의 산물입니다.</span>
+        </p>
+      </section>
+
+      <section class="lab-modules py-5 mb-5">
+        <div class="row row-cols-1 row-cols-lg-2 g-5 text-start">
+          
+          <div class="col">
+            <div class="card linear-card p-0 h-100 overflow-hidden" style="border-top: 2px solid #27C93F;">
+              <div class="d-flex justify-content-between align-items-center px-4 py-3 border-bottom border-secondary border-opacity-25" style="background: rgba(255,255,255,0.02);">
+                <span style="color: #27C93F; font-family: 'JetBrains Mono'; font-size: 0.75rem; font-weight: 700;">EXP_01 // R2K</span>
+                <div class="d-flex align-items-center gap-2">
+                  <span class="text-muted small" style="font-family: 'JetBrains Mono';">STATUS: LIVE</span>
+                  <div class="rounded-circle" style="width: 8px; height: 8px; background: #27C93F; box-shadow: 0 0 8px #27C93F;"></div>
+                </div>
+              </div>
+              <div class="p-4 d-flex flex-column h-100">
+                <h4 class="text-white fw-bold mb-3">Rhythm to Key (r2k)</h4>
+                <p class="mb-4 flex-grow-1" style="color: var(--linear-text); line-height: 1.6;">
+                  사용자의 키보드 입력과 리듬을 동기화하는 웹 기반 인터랙티브 미디어.<br>
+                  <span style="color: var(--linear-text-dim); font-size: 0.9rem;">브라우저 환경에서의 지연 시간(Latency) 최소화와 Audio API 활용에 초점을 맞춘 실험입니다.</span>
+                </p>
+                <div class="mt-auto">
+                  <button class="btn btn-sm px-4 py-2" style="background: rgba(255,255,255,0.05); border: 1px solid var(--border-color); color: #E1E1E1; font-family: 'JetBrains Mono'; border-radius: 4px; transition: all 0.2s ease;">>_ Execute_r2k</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col">
+            <div class="card linear-card p-0 h-100 overflow-hidden" style="border-top: 2px solid #FFBD2E;">
+              <div class="d-flex justify-content-between align-items-center px-4 py-3 border-bottom border-secondary border-opacity-25" style="background: rgba(255,255,255,0.02);">
+                <span style="color: #FFBD2E; font-family: 'JetBrains Mono'; font-size: 0.75rem; font-weight: 700;">EXP_02 // TETRIS_CORE</span>
+                <div class="d-flex align-items-center gap-2">
+                  <span class="text-muted small" style="font-family: 'JetBrains Mono';">STATUS: REFACTORING</span>
+                  <div class="rounded-circle cursor-blink" style="width: 8px; height: 8px; background: #FFBD2E; box-shadow: 0 0 8px #FFBD2E;"></div>
+                </div>
+              </div>
+              <div class="p-4 d-flex flex-column h-100">
+                <h4 class="text-white fw-bold mb-3">Tetris Logic Refactoring</h4>
+                <p class="mb-4 flex-grow-1" style="color: var(--linear-text); line-height: 1.6;">
+                  고전 테트리스의 비즈니스 로직을 순수 JavaScript로 재설계.<br>
+                  <span style="color: var(--linear-text-dim); font-size: 0.9rem;">프론트엔드 상태 관리(State Management)와 렌더링 최적화를 테스트하기 위한 샌드박스 프로젝트입니다.</span>
+                </p>
+                <div class="mt-auto">
+                  <button class="btn btn-sm px-4 py-2 disabled" style="background: transparent; border: 1px dashed var(--border-color); color: var(--linear-text-dim); font-family: 'JetBrains Mono'; border-radius: 4px; cursor: not-allowed;">>_ Under_Maintenance</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+    </main>
+
+    <footer class="container py-4 border-top border-secondary border-opacity-25">
+        <div class="d-flex justify-content-between align-items-center">
+            <span class="footer-text small">© 2026 CRODE Lab. All rights reserved.</span>
+            <div class="d-flex gap-3">
+                <a href="https://github.com/croc100/CRODE" target="_blank" class="footer-link small">GitHub</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="{% static 'js/main.js' %}"></script>
+  </body>
+</html>

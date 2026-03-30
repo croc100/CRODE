@@ -1,9 +1,12 @@
-/* * CRODE Official Style Sheet
+/* *========================================================================
+ * CRODE Official Style Sheet
  * Concept: Linear.app Clone & System Engineering Identity
- */
+ * Includes: Base, Typography, Animations, Terminal UI, Cards, Footer
+ *======================================================================== */
 
+/* --- 1. Variables & Base --- */
 :root {
-  --linear-bg: #060609;       /* 더 깊은 블랙으로 조정 */
+  --linear-bg: #060609;         /* 더 깊은 블랙으로 조정 */
   --linear-heading: #FFFFFF;    /* 메인 타이틀: 완전 흰색 */
   --linear-text: #E1E1E1;       /* 중요 본문: 밝은 회색 (가시성 상향) */
   --linear-text-dim: #999999;   /* 부가 설명: 중간 회색 */
@@ -19,7 +22,7 @@ body {
   overflow-x: hidden;
   margin: 0;
   
-  /* 1. 배경 그리드 패턴 (Linear Signature) */
+  /* 배경 그리드 패턴 (Linear Signature) */
   background-image: 
     linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
     linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
@@ -27,23 +30,56 @@ body {
   background-position: center center;
 }
 
-/* 2. 상단 은은한 광원 효과 (Hero Glow) */
-.hero-glow {
-  position: absolute;
-  top: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 100vw;
-  height: 80vh;
-  /* 광원 색상도 밝아진 primary 컬러에 맞춰 조정 */
-  background: radial-gradient(circle at 50% 0%, rgba(118, 131, 251, 0.12) 0%, transparent 70%);
-  z-index: -1;
-  pointer-events: none;
+/* --- 2. Animations --- */
+/* 배경 광원 숨쉬는 효과 */
+@keyframes pulseGlow {
+  0% { transform: translateX(-50%) scale(1); opacity: 0.8; filter: blur(60px); }
+  50% { transform: translateX(-50%) scale(1.1); opacity: 1; filter: blur(80px); }
+  100% { transform: translateX(-50%) scale(1); opacity: 0.8; filter: blur(60px); }
 }
 
-/* 3. Navigation 커스텀 */
+/* 스크롤 등장 애니메이션 */
+@keyframes fadeUp {
+  0% { opacity: 0; transform: translateY(30px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+/* 터미널 커서 깜빡임 */
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+/* 등장 애니메이션 클래스별 지연 적용 */
+.hero, .notice-section, .features, .spotlight-section, .tech-stack, .bottom-cta {
+  opacity: 0;
+  animation: fadeUp 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+.hero { animation-delay: 0.1s; }
+.notice-section { animation-delay: 0.3s; }
+.features { animation-delay: 0.5s; }
+.spotlight-section { animation-delay: 0.7s; }
+.tech-stack { animation-delay: 0.9s; }
+
+/* --- 3. Background Glow --- */
+.hero-glow {
+  position: absolute;
+  top: -10%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80vw;
+  height: 80vh;
+  /* 더 강렬하고 복합적인 광원 배치 */
+  background: radial-gradient(circle at 50% 50%, rgba(118, 131, 251, 0.15), transparent 60%),
+              radial-gradient(circle at 50% 0%, rgba(255, 255, 255, 0.05), transparent 40%);
+  z-index: -1;
+  pointer-events: none;
+  animation: pulseGlow 8s ease-in-out infinite; /* 애니메이션 적용 */
+}
+
+/* --- 4. Navigation --- */
 .linear-nav {
-  backdrop-filter: blur(12px); /* 상단바 블러 처리 */
+  backdrop-filter: blur(12px);
   border-bottom: 1px solid var(--border-color);
 }
 
@@ -58,17 +94,21 @@ body {
   color: var(--linear-heading);
 }
 
-/* 4. Hero Section 타이포그래피 */
+/* --- 5. Typography & Buttons --- */
 .main-content {
-  padding-top: 160px; /* 네비게이션 공간 확보 */
+  padding-top: 160px;
 }
 
+/* 메인 타이틀 금속성 그라데이션 */
 .linear-heading {
-  font-size: clamp(40px, 8vw, 80px); /* 반응형 폰트 크기 */
+  font-size: clamp(48px, 8vw, 88px);
   line-height: 1.05;
   letter-spacing: -0.04em;
   font-weight: 700;
-  color: var(--linear-heading);
+  background: linear-gradient(180deg, #FFFFFF 0%, rgba(255, 255, 255, 0.5) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
 .linear-subheading {
@@ -76,11 +116,10 @@ body {
   line-height: 1.6;
   max-width: 600px;
   margin: 0 auto;
-  color: var(--linear-text) !important; /* Bootstrap text-muted 강제 덮어쓰기 */
+  color: var(--linear-text) !important;
   opacity: 1;
 }
 
-/* 5. 버튼 커스텀 (입체감 부여) */
 .linear-btn-primary {
   background-color: var(--linear-primary);
   border: none;
@@ -96,22 +135,55 @@ body {
 .linear-btn-primary:hover {
   transform: translateY(-2px);
   box-shadow: 0 6px 24px rgba(118, 131, 251, 0.5);
-  background-color: #8A96FC; /* 호버 시 밝기 상향 */
+  background-color: #8A96FC;
 }
 
-/* 6. Feature Card (유리 질감 반영) */
+/* --- 6. Feature Cards & Dynamic Spotlight --- */
 .linear-card {
   background: var(--card-bg);
   border: 1px solid var(--border-color);
   border-radius: 8px;
   backdrop-filter: blur(8px);
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden; /* 스포트라이트가 카드를 벗어나지 않도록 */
+}
+
+/* JS 연동: 마우스를 따라다니는 스포트라이트 빛 */
+.linear-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(
+      800px circle at var(--mouse-x, 0) var(--mouse-y, 0),
+      rgba(118, 131, 251, 0.08),
+      transparent 40%
+  );
+  z-index: 0;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+
+.linear-card:hover::before {
+  opacity: 1;
 }
 
 .linear-card:hover {
-  border-color: rgba(118, 131, 251, 0.4);
-  background: rgba(255, 255, 255, 0.05);
-  transform: translateY(-4px);
+  border-color: rgba(118, 131, 251, 0.6);
+  background: rgba(255, 255, 255, 0.06);
+  transform: translateY(-4px) scale(1.01);
+  box-shadow: 0 20px 40px -10px rgba(0,0,0,0.7), 0 0 20px rgba(118, 131, 251, 0.2);
+}
+
+.linear-card > .card-body,
+.linear-card > .terminal-header,
+.linear-card > .terminal-body {
+  position: relative;
+  z-index: 1; /* 빛 위로 콘텐츠를 올림 */
 }
 
 .card-title {
@@ -119,12 +191,11 @@ body {
   letter-spacing: -0.01em;
 }
 
-/* Bootstrap 유틸리티 클래스 대비 가시성 방어 코드 */
+/* --- 7. Utility & Overrides (Visibility) --- */
 .card-text.text-muted {
   color: var(--linear-text-dim) !important;
 }
 
-/* 7. 공지사항 및 텍스트 디테일 */
 .notice-text p, .notice-text li {
   color: var(--linear-text) !important;
 }
@@ -137,9 +208,58 @@ body {
   color: var(--linear-primary) !important;
 }
 
-/* 8. Footer 영역 */
+/* --- 8. Terminal UI & Tech Stack --- */
+.terminal-window {
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.8), 0 0 0 1px rgba(255, 255, 255, 0.1);
+}
+
+.cursor-blink {
+  animation: blink 1s step-end infinite;
+}
+
+.tech-badge {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid var(--border-color);
+  color: var(--linear-text-dim);
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-family: 'JetBrains Mono', monospace;
+  transition: all 0.2s ease;
+}
+
+.tech-badge:hover {
+  background: rgba(118, 131, 251, 0.1);
+  border-color: var(--linear-primary);
+  color: var(--linear-heading);
+  transform: translateY(-2px);
+}
+
+.bottom-cta {
+  padding-top: 80px;
+  padding-bottom: 80px;
+}
+
+/* --- 9. Footer --- */
 footer {
   margin-top: 100px;
   padding-top: 40px;
-  border-top: 1px solid var(--border-color);
+  border-top: 1px solid var(--border-color) !important;
+}
+
+.footer-text {
+  color: #8A8F98;
+  letter-spacing: 0.02em;
+}
+
+.footer-link {
+  color: #8A8F98;
+  text-decoration: none;
+  font-family: 'JetBrains Mono', monospace; 
+  transition: color 0.2s ease, text-shadow 0.2s ease;
+}
+
+.footer-link:hover {
+  color: var(--linear-heading);
+  text-shadow: 0 0 8px rgba(255, 255, 255, 0.4);
 }
