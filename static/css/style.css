@@ -1,0 +1,145 @@
+/* * CRODE Official Style Sheet
+ * Concept: Linear.app Clone & System Engineering Identity
+ */
+
+:root {
+  --linear-bg: #060609;       /* 더 깊은 블랙으로 조정 */
+  --linear-heading: #FFFFFF;    /* 메인 타이틀: 완전 흰색 */
+  --linear-text: #E1E1E1;       /* 중요 본문: 밝은 회색 (가시성 상향) */
+  --linear-text-dim: #999999;   /* 부가 설명: 중간 회색 */
+  --linear-primary: #7683FB;    /* 포인트 컬러 (가시성을 위해 톤업된 Linear Purple) */
+  --card-bg: rgba(255, 255, 255, 0.03);
+  --border-color: rgba(255, 255, 255, 0.08);
+}
+
+body {
+  font-family: 'Inter', -apple-system, sans-serif;
+  background-color: var(--linear-bg);
+  color: var(--linear-text);
+  overflow-x: hidden;
+  margin: 0;
+  
+  /* 1. 배경 그리드 패턴 (Linear Signature) */
+  background-image: 
+    linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+  background-size: 40px 40px;
+  background-position: center center;
+}
+
+/* 2. 상단 은은한 광원 효과 (Hero Glow) */
+.hero-glow {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100vw;
+  height: 80vh;
+  /* 광원 색상도 밝아진 primary 컬러에 맞춰 조정 */
+  background: radial-gradient(circle at 50% 0%, rgba(118, 131, 251, 0.12) 0%, transparent 70%);
+  z-index: -1;
+  pointer-events: none;
+}
+
+/* 3. Navigation 커스텀 */
+.linear-nav {
+  backdrop-filter: blur(12px); /* 상단바 블러 처리 */
+  border-bottom: 1px solid var(--border-color);
+}
+
+.linear-nav .nav-link {
+  color: var(--linear-text-dim);
+  font-size: 14px;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.linear-nav .nav-link:hover {
+  color: var(--linear-heading);
+}
+
+/* 4. Hero Section 타이포그래피 */
+.main-content {
+  padding-top: 160px; /* 네비게이션 공간 확보 */
+}
+
+.linear-heading {
+  font-size: clamp(40px, 8vw, 80px); /* 반응형 폰트 크기 */
+  line-height: 1.05;
+  letter-spacing: -0.04em;
+  font-weight: 700;
+  color: var(--linear-heading);
+}
+
+.linear-subheading {
+  font-size: 20px;
+  line-height: 1.6;
+  max-width: 600px;
+  margin: 0 auto;
+  color: var(--linear-text) !important; /* Bootstrap text-muted 강제 덮어쓰기 */
+  opacity: 1;
+}
+
+/* 5. 버튼 커스텀 (입체감 부여) */
+.linear-btn-primary {
+  background-color: var(--linear-primary);
+  border: none;
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 16px;
+  padding: 12px 28px;
+  color: white;
+  box-shadow: 0 4px 20px rgba(118, 131, 251, 0.3);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.linear-btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 24px rgba(118, 131, 251, 0.5);
+  background-color: #8A96FC; /* 호버 시 밝기 상향 */
+}
+
+/* 6. Feature Card (유리 질감 반영) */
+.linear-card {
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  backdrop-filter: blur(8px);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.linear-card:hover {
+  border-color: rgba(118, 131, 251, 0.4);
+  background: rgba(255, 255, 255, 0.05);
+  transform: translateY(-4px);
+}
+
+.card-title {
+  color: var(--linear-heading);
+  letter-spacing: -0.01em;
+}
+
+/* Bootstrap 유틸리티 클래스 대비 가시성 방어 코드 */
+.card-text.text-muted {
+  color: var(--linear-text-dim) !important;
+}
+
+/* 7. 공지사항 및 텍스트 디테일 */
+.notice-text p, .notice-text li {
+  color: var(--linear-text) !important;
+}
+
+.text-white-50 {
+  color: var(--linear-text-dim) !important;
+}
+
+.text-accent {
+  color: var(--linear-primary) !important;
+}
+
+/* 8. Footer 영역 */
+footer {
+  margin-top: 100px;
+  padding-top: 40px;
+  border-top: 1px solid var(--border-color);
+}

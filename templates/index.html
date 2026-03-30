@@ -1,0 +1,139 @@
+{% load static %}
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>CRODE | Building Systems, Archiving Thoughts.</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="{% static 'css/style.css' %}" rel="stylesheet">
+    <style>
+      /* 공지사항 섹션 커스텀 스타일 */
+      .notice-badge {
+        background: rgba(94, 106, 210, 0.1);
+        border: 1px solid #5e6ad2;
+        color: #5e6ad2;
+        padding: 4px 12px;
+        border-radius: 20px;
+        font-size: 0.75rem;
+        font-weight: 600;
+        display: inline-block;
+      }
+      .notice-text {
+        font-size: 0.9rem;
+        color: #8a8f98;
+        line-height: 1.6;
+      }
+      .text-accent {
+        color: #5e6ad2;
+        font-family: 'JetBrains Mono', monospace;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="hero-glow"></div>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-transparent fixed-top linear-nav py-3">
+      <div class="container">
+        <a class="navbar-brand fw-bold fs-4 d-flex align-items-center" href="#">
+            <img src="{% static 'img/img.png' %}" 
+                 alt="CRODE" 
+                 width="28"  
+                 height="28" 
+                 class="me-2 rounded-1" 
+                 style="object-fit: cover;"> 
+            <span style="letter-spacing: -0.02em; color: var(--linear-heading);">CRODE</span>
+        </a>        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto gap-3">
+            <li class="nav-item"><a class="nav-link" href="#">Projects</a></li>
+            <li class="nav-item"><a class="nav-link" href="#">Lab</a></li>
+            <li class="nav-item"><a class="nav-link" href="#">Lib</a></li>
+            <li class="nav-item ms-lg-3"><button class="btn btn-sm btn-outline-light px-3">Contact</button></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <main class="main-content text-center container">
+      <section class="hero py-5 mt-5">
+        <div class="mb-4">
+          <span class="notice-badge">Roadmap</span>
+          <span class="ms-2 text-white-50 small" style="font-family: 'JetBrains Mono';">v1.0.0-alpha</span>
+        </div>
+        <h1 class="display-1 text-white fw-bold linear-heading mb-4">
+            Building Systems,<br>Archiving Thoughts.
+        </h1>
+        <p class="lead text-muted linear-subheading mb-5">
+            아이디어를 시스템으로 설계하고, 기록으로 박제합니다.<br>
+            CRODE는 1인 기업의 기민함과 엔지니어링의 정교함을 제공합니다.
+        </p>
+      </section>
+
+      <section class="notice-section mb-5">
+        <div class="linear-card p-4 mx-auto text-start" style="max-width: 800px; border-left: 2px solid #5e6ad2;">
+          <div class="mb-2 text-accent" style="font-size: 0.7rem;">[SYSTEM_LOG_20260330]</div>
+          <h5 class="text-white mb-3 fw-bold">Roadmap Update: Public Release Preparation</h5>
+          <div class="notice-text">
+            <p class="mb-3 text-white-50">아이디어를 시스템으로 박제하는 여정이 시작되었습니다.</p>
+            <p class="mb-0">
+              현재 <span class="text-white">setpoint.kr</span>을 포함한 주요 모듈의 공개 배포를 준비 중입니다. 
+              각 모듈은 엄격한 시스템 최적화와 보안 검증을 거쳐 공개될 예정입니다.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="features py-5">
+        <div class="row row-cols-1 row-cols-md-3 g-4 text-start">
+          
+          <div class="col">
+            <div class="card linear-card bg-transparent text-white p-4 h-100">
+              <div class="card-body p-0">
+                <div class="mb-3 text-accent" style="font-size: 0.75rem;">01 / SERVICE</div>
+                <h5 class="card-title fw-bold mb-3">setpoint.kr</h5>
+                <p class="card-text text-muted">데이터 기반 커뮤니티 큐레이션 엔진. 파편화된 정보를 시스템으로 통합하여 새로운 통찰을 제공합니다.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col">
+            <div class="card linear-card bg-transparent text-white p-4 h-100">
+              <div class="card-body p-0">
+                <div class="mb-3 text-accent" style="font-size: 0.75rem;">02 / MEDIA</div>
+                <h5 class="card-title fw-bold mb-3">Interactive Media</h5>
+                <p class="card-text text-muted">r2k 및 tetris 프로젝트. 사용자와 기술의 접점에서 발생하는 인터랙티브한 경험을 실험합니다.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col">
+            <div class="card linear-card bg-transparent text-white p-4 h-100">
+              <div class="card-body p-0">
+                <div class="mb-3 text-accent" style="font-size: 0.75rem;">03 / INFRA</div>
+                <h5 class="card-title fw-bold mb-3">PaaS & Security</h5>
+                <p class="card-text text-muted">Zero Trust 기반 아키텍처 설계. Yubikey를 활용한 하드웨어 인증 등 견고한 보안 시스템을 구축합니다.</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+    </main>
+
+    <footer class="container py-5 mt-5 border-top border-secondary border-opacity-25 text-center">
+        <div class="d-flex justify-content-between align-items-center">
+            <span class="text-muted small">© 2026 CRODE Lab. All rights reserved.</span>
+            <div class="d-flex gap-3">
+                <a href="https://github.com/croc100/CRODE" class="text-muted text-decoration-none small">GitHub</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="{% static 'js/main.js' %}"></script>
+  </body>
+</html>
