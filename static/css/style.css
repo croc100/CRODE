@@ -81,6 +81,7 @@ body {
 .linear-nav {
   backdrop-filter: blur(12px);
   border-bottom: 1px solid var(--border-color);
+  z-index: 2000 !important; 
 }
 
 .linear-nav .nav-link {
@@ -97,6 +98,8 @@ body {
 /* --- 5. Typography & Buttons --- */
 .main-content {
   padding-top: 160px;
+  position: relative;
+  z-index: 1; 
 }
 
 /* 메인 타이틀 금속성 그라데이션 */
@@ -238,6 +241,26 @@ body {
 .bottom-cta {
   padding-top: 80px;
   padding-bottom: 80px;
+}
+
+.contact-btn {
+    display: inline-block;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+    z-index: 2100 !important;
+    pointer-events: auto !important; /* 클릭 이벤트 강제 허용 */
+}
+
+.contact-btn:hover {
+    background: var(--linear-primary) !important;
+    border-color: var(--linear-primary) !important;
+    box-shadow: 0 0 15px var(--linear-primary);
+    transform: translateY(-2px);
+}
+
+.contact-btn:active {
+    transform: scale(0.95);
 }
 
 /* --- 9. Footer --- */

@@ -1,41 +1,7 @@
+{% extends 'base.html' %}
 {% load static %}
-<!doctype html>
-<html lang="ko">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="shortcut icon" href="{% static 'img/favicon.ico' %}" type="image/x-icon">
-    <link rel="apple-touch-icon" href="{% static 'img/favicon.ico' %}">
-    <title>CRODE</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="{% static 'css/style.css' %}" rel="stylesheet">
-  </head>
-  <body>
-    <div class="hero-glow"></div>
 
-    <nav class="navbar navbar-expand-lg navbar-dark bg-transparent fixed-top linear-nav py-3">
-      <div class="container">
-        <a class="navbar-brand fw-bold fs-4 d-flex align-items-center" href="/">
-            <img src="{% static 'img/img.png' %}" alt="CRODE" width="28" height="28" class="me-2 rounded-1" style="object-fit: cover;"> 
-            <span style="letter-spacing: -0.02em; color: var(--linear-heading);">CRODE</span>
-        </a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav ms-auto gap-3">
-            <li class="nav-item"><a class="nav-link" href="#">Projects</a></li>
-            <li class="nav-item"><a class="nav-link" href="{% url 'lab' %}">Lab</a></li>
-            <li class="nav-item"><a class="nav-link" href="#">Lib</a></li>
-            <li class="nav-item ms-lg-3">
-        <button class="btn btn-sm btn-outline-light px-3">Contact</button></li>
-          </ul>
-        </div>
-      </div>
-    </nav>
-
-    <main class="main-content text-center container">
+{% block content %}
       <section class="hero py-5 mt-5">
         <div class="mb-4">
           <span class="notice-badge" style="background: rgba(118, 131, 251, 0.1); border: 1px solid var(--linear-primary); color: var(--linear-primary); padding: 4px 12px; border-radius: 20px; font-size: 0.75rem; font-weight: 600;">Roadmap</span>
@@ -123,17 +89,13 @@
               </div>
               <div class="terminal-body p-4" style="font-family: 'JetBrains Mono', monospace; font-size: 0.85rem; color: #E1E1E1; background: #000000;">
                 <div class="mb-2"><span style="color: #27C93F;">crode@client</span><span style="color: #5E6AD2;">:~$</span> ssh root@crode-node.net</div>
-              
                 <div class="mb-2 text-muted">Intercepted by CRODE Virus-Wall Gateway...</div>
                 <div class="mb-1" style="color: #FFBD2E;">[Virus-Wall] Running Zero Trust posture check... <span style="color: #27C93F;">PASS</span></div>
                 <div class="mb-3" style="color: #FFBD2E;">[Virus-Wall] Traffic signature analysis... <span style="color: #27C93F;">CLEAN</span></div>
-              
                 <div class="mb-2"><span style="color: #27C93F;">Connection established via secure tunnel.</span></div>
                 <div class="mb-2">Last login: Tue Mar 31 12:45:00 2026 from 10.0.0.5</div>
                 <div class="mb-2"><span style="color: #5E6AD2;">root@crode-node</span><span style="color: #fff;">:~#</span> docker ps | grep setpoint</div>
-              
                 <div><span class="text-muted">b8a92f...   crode/setpoint:latest   "python manage.py..."   Up 4 days   0.0.0.0:8000->8000/tcp</span></div>
-              
                 <span class="cursor-blink" style="display: inline-block; width: 8px; height: 15px; background: #fff; vertical-align: middle; margin-top: 10px;"></span>
               </div>            
             </div>
@@ -154,24 +116,9 @@
 
       <section class="bottom-cta py-5 my-5">
         <h2 class="display-4 fw-bold mb-4 linear-heading" style="letter-spacing: -0.03em;">Ready to build<br>the next system?</h2>
-        
         <p class="mb-5" style="color: var(--linear-text); font-size: 1.1rem;">
           <span class="text-white fw-bold">CRODE</span>는 언제나 새로운 아이디어를 박제할 준비가 되어있습니다.
         </p>
-        <a href="{% url 'lab' %}" class="btn btn-lg linear-btn-primary px-5 py-3" style="border-radius: 30px;">Go to Lab</a>      </section>
-
-    </main>
-
-    <footer class="container py-4 border-top border-secondary border-opacity-25">
-        <div class="d-flex justify-content-between align-items-center">
-            <span class="footer-text small">© 2025 CRODE. All rights reserved.</span>
-            <div class="d-flex gap-3">
-                <a href="https://github.com/croc100/CRODE" target="_blank" class="footer-link small">GitHub</a>
-            </div>
-        </div>
-    </footer>
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="{% static 'js/main.js' %}"></script>
-  </body>
-</html>
+        <a href="{% url 'lab' %}" class="btn btn-lg linear-btn-primary px-5 py-3" style="border-radius: 30px;">Go to Lab</a>
+      </section>
+{% endblock %}
