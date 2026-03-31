@@ -4,8 +4,13 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 SECRET_KEY = 'dev-secret-key-for-local-only'
 DEBUG = True
-ALLOWED_HOSTS = []
-
+ALLOWED_HOSTS = [
+    'crode.net', 
+    'www.crode.net', 
+    '127.0.0.1', 
+    'localhost',
+    '141.147.153.251',  # 오라클 서버의 공인 IP (필요시)
+]
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
