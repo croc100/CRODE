@@ -1,7 +1,10 @@
 # crode_site/urls.py
 from django.contrib import admin
 from django.urls import path
-from main import views
+from django.views.generic import TemplateView
+from main import views 
+
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
