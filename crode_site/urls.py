@@ -8,6 +8,9 @@ urlpatterns = [
     path('', views.home, name='home'),
     path('lab/', views.lab, name='lab'),
     path('projects/', views.projects, name='projects'),
-    path('lib/', views.lib, name='lib')
+    path('lib/', views.lib, name='lib'),
 
+    # SEO 인프라 라우팅
+    path('robots.txt', TemplateView.as_view(template_name="robots.txt", content_type="text/plain")),
+    path('sitemap.xml', TemplateView.as_view(template_name="sitemap.xml", content_type="application/xml")),
 ]
