@@ -1,0 +1,82 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}CRODE | Projects{% endblock %}
+
+{% block content %}
+<section class="hero py-5 mt-5 text-start">
+    <h1 class="display-3 text-white fw-bold linear-heading mb-3" style="letter-spacing: -0.05em;">
+        Engineered Systems.
+    </h1>
+    <p class="lead mb-5" style="color: var(--linear-text-dim); line-height: 1.8; max-width: 600px;">
+        단순한 코딩이 아닌, 물리적 한계와 논리적 구조를 제어하는 아키텍처의 결과물들입니다.
+    </p>
+
+    <div class="row g-5">
+        <div class="col-12">
+            <div class="card linear-card p-0 border-0">
+                <div class="row g-0 align-items-center">
+                    <div class="col-lg-6 p-5">
+                        <div class="d-flex align-items-center gap-3 mb-4">
+                            <span class="text-accent font-monospace small" style="letter-spacing: 0.05em;">[ PRJ_01 ]</span>
+                            <span class="badge bg-success bg-opacity-10 text-success border border-success border-opacity-25 px-2 py-1">LIVE</span>
+                        </div>
+                        <h2 class="text-white fw-bold mb-3" style="letter-spacing: -0.04em;">setpoint.kr</h2>
+                        <p class="mb-4" style="color: var(--linear-text); line-height: 1.7;">
+                            파편화된 커뮤니티 데이터를 통합하여 큐레이션하는 엔진. 
+                            대용량 트래픽 처리를 위해 Nginx 캐싱과 Django ORM 최적화를 거친 프로덕션 레벨의 서비스입니다.
+                        </p>
+                        <div class="d-flex flex-wrap gap-2 mb-5">
+                            <span class="tech-badge">Python</span>
+                            <span class="tech-badge">Django</span>
+                            <span class="tech-badge">Linux</span>
+                        </div>
+                        <a href="https://setpoint.kr" target="_blank" class="btn btn-sm px-4 py-2" style="background: rgba(255,255,255,0.05); border: 1px solid var(--border-color); color: #E1E1E1; border-radius: 6px; transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);">
+                            Launch System ↗
+                        </a>
+                    </div>
+                    <div class="col-lg-6 h-100 p-4">
+                        <div class="w-100 h-100 rounded-3 d-flex align-items-center justify-content-center" 
+                             style="min-height: 320px; background: linear-gradient(135deg, rgba(118, 131, 251, 0.05) 0%, rgba(0,0,0,0) 100%); border: 1px solid rgba(255,255,255,0.03); box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.05);">
+                            <span class="text-muted font-monospace small">System Visualization...</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-12">
+            <div class="card linear-card p-0 border-0">
+                <div class="row g-0 align-items-center">
+                    <div class="col-lg-6 p-5 order-lg-2">
+                        <div class="d-flex align-items-center gap-3 mb-4">
+                            <span class="text-accent font-monospace small" style="letter-spacing: 0.05em;">[ PRJ_02 ]</span>
+                            <span class="badge bg-warning bg-opacity-10 text-warning border border-warning border-opacity-25 px-2 py-1">ITERATING</span>
+                        </div>
+                        <h2 class="text-white fw-bold mb-3" style="letter-spacing: -0.04em;">Zero-Trust Backbone</h2>
+                        <p class="mb-4" style="color: var(--linear-text); line-height: 1.7;">
+                            Oracle Cloud 기반의 Multi-node 아키텍처. 
+                            외부의 개입을 최소화하고 독립적인 시스템 제어권을 확보하기 위해 설계된 강력한 방화벽 및 인프라 망입니다.
+                        </p>
+                        <div class="d-flex flex-wrap gap-2 mb-5">
+                            <span class="tech-badge">Docker</span>
+                            <span class="tech-badge">Nginx</span>
+                            <span class="tech-badge">Security</span>
+                        </div>
+                        <a href="{% url 'lab' %}" class="btn btn-sm px-4 py-2" style="background: rgba(255,255,255,0.05); border: 1px solid var(--border-color); color: #E1E1E1; border-radius: 6px; transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);">
+                            View Architecture ↗
+                        </a>
+                    </div>
+                    <div class="col-lg-6 h-100 p-4 order-lg-1">
+                        <div class="w-100 h-100 rounded-3 d-flex align-items-center justify-content-center" 
+                             style="min-height: 320px; background: linear-gradient(135deg, rgba(39, 201, 63, 0.05) 0%, rgba(0,0,0,0) 100%); border: 1px solid rgba(255,255,255,0.03); box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.05);">
+                            <span class="text-muted font-monospace small">Architecture Diagram...</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+{% endblock %}

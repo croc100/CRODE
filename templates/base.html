@@ -27,7 +27,7 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav ms-auto gap-3">
-            <li class="nav-item"><a class="nav-link" href="#">Projects</a></li>
+            <li class="nav-item"><a class="nav-link {% if request.path == '/projects/' %}text-white fw-bold{% endif %}" href="{% url 'projects' %}">Projects</a></li>
             <li class="nav-item"><a class="nav-link {% if request.path == '/lab/' %}text-white fw-bold{% endif %}" href="{% url 'lab' %}">Lab</a></li>
             <li class="nav-item"><a class="nav-link" href="#">Lib</a></li>
             <li class="nav-item ms-lg-3">
@@ -62,7 +62,7 @@
                 </div>
                 <p class="small mb-0" style="color: var(--linear-text-dim); line-height: 1.6;">
                     시스템 설계, 인프라 구축 및 비즈니스 협업 문의는 위 주소로 연락 부탁드립니다. 
-                    1인 기업의 특성상 순차적으로 확인 후 회신 드립니다.
+                    순차적으로 확인 후 회신 드립니다.
                 </p>
           </div>  
          </div>

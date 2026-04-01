@@ -6,3 +6,6 @@ def home(request):
 
 def lab(request):
     return render(request, 'lab.html')
+
+def projects(request):
+    return render(request, 'projects.html')
