@@ -9,3 +9,6 @@ def lab(request):
 
 def projects(request):
     return render(request, 'projects.html')
+
+def lib(request):
+    return render(request, 'lib.html')

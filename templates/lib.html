@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}CRODE | Lib - Knowledge Base{% endblock %}
+
+{% block content %}
+<section class="hero py-5 mt-5 d-flex flex-column align-items-center justify-content-center" style="min-height: 60vh;">
+    <div class="mb-4">
+        <span class="notice-badge" style="background: rgba(118, 131, 251, 0.1); border: 1px solid var(--linear-primary); color: var(--linear-primary); padding: 4px 12px; border-radius: 20px; font-size: 0.75rem; font-weight: 600; font-family: 'JetBrains Mono';">
+            MODULE_STATUS: INITIALIZING
+        </span>
+    </div>
+    
+    <h1 class="display-2 text-white fw-bold linear-heading mb-4" style="letter-spacing: -0.05em;">
+        Knowledge Archive<br>Coming Soon.
+    </h1>
+    
+    <p class="lead mb-5" style="color: var(--linear-text-dim); line-height: 1.8; max-width: 550px;">
+        엔지니어링 기록, 시스템 아키텍처 가이드, 그리고 파편화된 지식들을<br>
+        <span class="text-white">정교한 위키 형식으로 구축 중입니다.</span>
+    </p>
+
+    <div class="linear-card p-4 text-start" style="max-width: 400px; width: 100%;">
+        <div class="d-flex align-items-center gap-3 mb-3">
+            <div class="spinner-border spinner-border-sm text-accent" role="status"></div>
+            <span class="font-monospace small text-white" style="font-size: 0.8rem;">Building Index... 42%</span>
+        </div>
+        <div class="progress mb-2" style="height: 4px; background: rgba(255,255,255,0.05);">
+            <div class="progress-bar" role="progressbar" style="width: 42%; background: var(--linear-primary);"></div>
+        </div>
+        <p class="font-monospace text-muted mb-0" style="font-size: 0.7rem;">
+            > Fetching documentation structures<br>
+            > Mapping knowledge nodes<br>
+            > Waiting for deployment...
+        </p>
+    </div>
+</section>
+{% endblock %}

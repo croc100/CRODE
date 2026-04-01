@@ -29,7 +29,7 @@
           <ul class="navbar-nav ms-auto gap-3">
             <li class="nav-item"><a class="nav-link {% if request.path == '/projects/' %}text-white fw-bold{% endif %}" href="{% url 'projects' %}">Projects</a></li>
             <li class="nav-item"><a class="nav-link {% if request.path == '/lab/' %}text-white fw-bold{% endif %}" href="{% url 'lab' %}">Lab</a></li>
-            <li class="nav-item"><a class="nav-link" href="#">Lib</a></li>
+            <li class="nav-item"><a class="nav-link {% if request.path == '/lib/' %}text-white fw-bold{% endif %}" href="{% url 'lib' %}">Lib</a></li>
             <li class="nav-item ms-lg-3">
                 <button class="btn btn-sm btn-outline-light px-3 contact-btn" data-bs-toggle="modal" data-bs-target="#contactModal">Contact</button>
             </li>

@@ -7,5 +7,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.home, name='home'),
     path('lab/', views.lab, name='lab'),
-    path('projects/', views.projects, name='projects')
+    path('projects/', views.projects, name='projects'),
+    path('lib/', views.lib, name='lib')
+
 ]
