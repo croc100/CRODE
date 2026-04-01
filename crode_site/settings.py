@@ -9,7 +9,7 @@ ALLOWED_HOSTS = [
     'www.crode.net', 
     '127.0.0.1', 
     'localhost',
-    '141.147.153.251',  # 오라클 서버의 공인 IP (필요시)
+    '141.147.153.251',  # 오라클 서버의 공인 IP
 ]
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -71,5 +71,7 @@ STATIC_URL = 'static/'
 STATICFILES_DIRS = [
     BASE_DIR / 'static',
 ]
+
+STATIC_ROOT = BASE_DIR / 'staticfiles'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
