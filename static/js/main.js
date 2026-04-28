@@ -101,12 +101,13 @@ if (document.getElementById('s-api')) {
         if (el && data[key] != null) countUp(el, data[key]);
       }
       if (data.weekly_requests && data.weekly_requests.length) {
+        /* 앞쪽 연속 0 제거 — 데이터 있는 날만 표시 */
+        var trimmed = data.weekly_requests.slice();
+        while (trimmed.length > 1 && trimmed[0] === 0) trimmed.shift();
         var sparkApi = document.getElementById('spark-api');
-        if (sparkApi) sparkApi.innerHTML = sparkline(data.weekly_requests, '#7683FB');
-        var sparkTournaments = document.getElementById('spark-tournaments');
-        if (sparkTournaments) sparkTournaments.innerHTML = sparkline(data.weekly_requests.map(function() { return 0; }), '#22C55E');
+        if (sparkApi) sparkApi.innerHTML = sparkline(trimmed, '#7683FB');
         var sparkRecords = document.getElementById('spark-records');
-        if (sparkRecords) sparkRecords.innerHTML = sparkline(data.weekly_requests, '#A78BFA');
+        if (sparkRecords) sparkRecords.innerHTML = sparkline(trimmed, '#A78BFA');
       }
       if (data.last_updated) {
         var d = new Date(data.last_updated);
