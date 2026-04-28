@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CRODE | Lib</title>
+  <link rel="shortcut icon" href="static/img/favicon.ico">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="static/css/style.css">
+</head>
+<body>
+<div class="hero-glow"></div>
+
+<!-- NAV -->
+<nav id="nav">
+  <div class="nav-inner">
+    <a class="nav-brand" href="index.html">
+      <img src="static/img/img.png" width="22" height="22" alt="CRODE">
+      CRODE
+    </a>
+    <div class="nav-sep"></div>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="lab.html">Lab</a></li>
+      <li><a href="lib.html" class="active">Lib</a></li>
+    </ul>
+    <div class="nav-right">
+      <span class="nav-kbd"><span class="kbd">⌘</span><span class="kbd">K</span> Contact</span>
+      <button class="btn-contact" data-modal="contact">Contact</button>
+    </div>
+    <button class="nav-toggle" id="navToggle">&#9776;</button>
+  </div>
+</nav>
+
+<div class="page-wrapper">
+<main class="main-content">
+<div class="container" style="display:flex; flex-direction:column; align-items:center; justify-content:center; min-height:60vh; text-align:center;">
+
+  <div class="badge-tag badge-purple" style="margin-bottom:2rem;">MODULE_STATUS: INITIALIZING</div>
+
+  <h1 class="page-title" style="max-width:600px; margin:0 auto 1rem;">Knowledge Archive<br>Coming Soon.</h1>
+
+  <p style="font-size:1rem; color:var(--text-dim); line-height:1.75; max-width:500px; margin-bottom:3rem;">
+    엔지니어링 기록, 시스템 아키텍처 가이드, 그리고 파편화된 지식들을<br>
+    <span style="color:var(--heading);">정교한 위키 형식으로 구축 중입니다.</span>
+  </p>
+
+  <div class="linear-card" style="width:min(380px,100%); padding:1.5rem; text-align:left;">
+    <div style="display:flex; align-items:center; gap:0.75rem; margin-bottom:1rem;">
+      <div style="width:8px; height:8px; border-radius:50%; background:var(--primary); box-shadow:0 0 6px var(--primary); animation:pulse 2s ease-in-out infinite;"></div>
+      <span style="font-family:var(--mono); font-size:0.78rem; color:var(--heading);">Building Index... 42%</span>
+    </div>
+    <div style="height:3px; background:rgba(255,255,255,0.05); border-radius:2px; margin-bottom:1.25rem; overflow:hidden;">
+      <div style="width:42%; height:100%; background:var(--primary); border-radius:2px;"></div>
+    </div>
+    <div style="font-family:var(--mono); font-size:0.72rem; color:var(--text-mute); line-height:2;">
+      <div>&gt; Fetching documentation structures</div>
+      <div>&gt; Mapping knowledge nodes</div>
+      <div>&gt; Waiting for deployment...<span class="t-cursor" style="margin-left:4px;"></span></div>
+    </div>
+  </div>
+
+</div>
+</main>
+
+<footer>
+  <div class="container">
+    <div class="footer-inner">
+      <span class="footer-text">© 2026 CRODE. All rights reserved.</span>
+      <div class="footer-links">
+        <a href="https://github.com/croc100/CRODE" target="_blank" rel="noopener">GitHub</a>
+      </div>
+    </div>
+  </div>
+</footer>
+</div>
+
+<!-- CONTACT MODAL -->
+<div class="modal-overlay" id="contactModal">
+  <div class="modal-box">
+    <div class="modal-header">
+      <span class="modal-title">Contact Information</span>
+      <button class="modal-close" data-modal-close>✕</button>
+    </div>
+    <p class="modal-label">[ OFFICIAL_EMAIL ]</p>
+    <div class="modal-email-row">
+      <span class="modal-email">admin@crode.net</span>
+      <button class="modal-copy-btn" onclick="copyEmail(this)">Copy</button>
+    </div>
+    <p class="modal-note">시스템 설계, 인프라 구축 및 비즈니스 협업 문의는 위 주소로 연락 부탁드립니다.</p>
+  </div>
+</div>
+
+<script src="static/js/main.js"></script>
+</body>
+</html>
