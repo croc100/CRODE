@@ -123,50 +123,56 @@
         </div>
         <a class="btn-ghost" href="https://setpoint.kr" target="_blank" rel="noopener" style="font-size:0.82rem;">Launch System &nbsp;↗</a>
       </div>
-      <div style="display:flex; align-items:center; justify-content:center; padding:2rem; border-left:1px solid var(--border); background:linear-gradient(135deg,rgba(118,131,251,0.04),transparent); overflow:hidden; position:relative;">
-        <div style="width:100%; max-width:260px; font-family:var(--mono);">
-          <!-- 터미널 헤더 -->
-          <div style="background:#1e1e2e; border-radius:10px 10px 0 0; padding:0.5rem 0.75rem; display:flex; align-items:center; gap:0.4rem; border:1px solid #2d2d3f; border-bottom:none;">
-            <span style="width:10px;height:10px;border-radius:50%;background:#ff5f57;display:inline-block;"></span>
-            <span style="width:10px;height:10px;border-radius:50%;background:#febc2e;display:inline-block;"></span>
-            <span style="width:10px;height:10px;border-radius:50%;background:#28c840;display:inline-block;"></span>
-            <span style="font-size:0.62rem; color:#555; margin-left:0.5rem;">setpoint — data stream</span>
+      <!-- setpoint: Live Feed UI -->
+      <div style="display:flex; align-items:center; justify-content:center; padding:2rem; border-left:1px solid var(--border); background:linear-gradient(135deg,rgba(118,131,251,0.05),transparent); overflow:hidden;">
+        <div style="width:100%; max-width:272px;">
+          <!-- Feed header -->
+          <div style="display:flex; align-items:center; justify-content:space-between; margin-bottom:0.875rem;">
+            <span style="font-size:0.72rem; font-weight:600; color:var(--heading); letter-spacing:0.01em;">Live Feed</span>
+            <span style="font-size:0.62rem; color:#4ade80; background:rgba(74,222,128,0.1); border:1px solid rgba(74,222,128,0.2); padding:0.18rem 0.5rem; border-radius:99px; font-weight:600; display:flex; align-items:center; gap:0.3rem;"><span style="width:5px;height:5px;border-radius:50%;background:#4ade80;display:inline-block;animation:sp-pulse 2s ease-in-out infinite;"></span>live</span>
           </div>
-          <!-- 터미널 바디 -->
-          <div style="background:#13131f; border-radius:0 0 10px 10px; padding:1rem; border:1px solid #2d2d3f; font-size:0.7rem; line-height:1.9;">
-            <div><span style="color:#555;">$</span> <span style="color:#7c6af7;">fetch</span> <span style="color:#e2e8f0;">--source community</span></div>
-            <div style="color:#28c840;" class="sp-line">✓ reddit       <span style="color:#555;">+247</span></div>
-            <div style="color:#28c840;" class="sp-line">✓ dcinside     <span style="color:#555;">+891</span></div>
-            <div style="color:#28c840;" class="sp-line">✓ theqoo       <span style="color:#555;">+134</span></div>
-            <div style="color:#febc2e;" class="sp-line">⟳ filtering    <span style="color:#555;">1,272 items</span></div>
-            <div style="color:#7c6af7;" class="sp-cursor">▌</div>
+          <!-- Feed items -->
+          <div style="display:flex; flex-direction:column; gap:0.45rem;">
+            <div style="background:rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.07); border-radius:10px; padding:0.7rem 0.875rem;">
+              <div style="display:flex; align-items:center; gap:0.45rem; margin-bottom:0.35rem;">
+                <span style="font-size:0.58rem; font-weight:700; background:rgba(255,100,50,0.15); color:#fb7c41; padding:0.15rem 0.45rem; border-radius:4px; letter-spacing:0.04em; text-transform:uppercase;">reddit</span>
+                <span style="font-size:0.6rem; color:var(--text-mute); margin-left:auto;">방금</span>
+              </div>
+              <p style="font-size:0.73rem; color:var(--text-sub); line-height:1.45; margin:0;">롤드컵 8강 대진표 확정 소식 공유합니다</p>
+            </div>
+            <div style="background:rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.07); border-radius:10px; padding:0.7rem 0.875rem;">
+              <div style="display:flex; align-items:center; gap:0.45rem; margin-bottom:0.35rem;">
+                <span style="font-size:0.58rem; font-weight:700; background:rgba(80,130,255,0.15); color:#6b9fff; padding:0.15rem 0.45rem; border-radius:4px; letter-spacing:0.04em; text-transform:uppercase;">dcinside</span>
+                <span style="font-size:0.6rem; color:var(--text-mute); margin-left:auto;">23초 전</span>
+              </div>
+              <p style="font-size:0.73rem; color:var(--text-sub); line-height:1.45; margin:0;">T1 vs GEN.G 5세트 하이라이트 클립</p>
+            </div>
+            <div style="background:rgba(255,255,255,0.025); border:1px solid rgba(255,255,255,0.05); border-radius:10px; padding:0.7rem 0.875rem; opacity:0.55;">
+              <div style="display:flex; align-items:center; gap:0.45rem; margin-bottom:0.35rem;">
+                <span style="font-size:0.58rem; font-weight:700; background:rgba(220,50,100,0.12); color:#e06c8a; padding:0.15rem 0.45rem; border-radius:4px; letter-spacing:0.04em; text-transform:uppercase;">theqoo</span>
+                <span style="font-size:0.6rem; color:var(--text-mute); margin-left:auto;">1분 전</span>
+              </div>
+              <p style="font-size:0.73rem; color:var(--text-sub); line-height:1.45; margin:0;">페이커 인터뷰 전문 번역본 올라왔네요</p>
+            </div>
           </div>
-          <!-- 미니 바 차트 -->
-          <div style="margin-top:0.75rem; display:flex; align-items:flex-end; gap:4px; height:40px;">
-            <div style="flex:1; background:rgba(124,106,247,0.15); border-radius:3px 3px 0 0; height:55%; border-top:2px solid rgba(124,106,247,0.4);"></div>
-            <div style="flex:1; background:rgba(124,106,247,0.15); border-radius:3px 3px 0 0; height:80%; border-top:2px solid rgba(124,106,247,0.6);"></div>
-            <div style="flex:1; background:rgba(124,106,247,0.15); border-radius:3px 3px 0 0; height:45%; border-top:2px solid rgba(124,106,247,0.4);"></div>
-            <div style="flex:1; background:rgba(124,106,247,0.25); border-radius:3px 3px 0 0; height:100%; border-top:2px solid #7c6af7; animation:sp-pulse 2s ease-in-out infinite;"></div>
-            <div style="flex:1; background:rgba(124,106,247,0.15); border-radius:3px 3px 0 0; height:70%; border-top:2px solid rgba(124,106,247,0.5);"></div>
-            <div style="flex:1; background:rgba(124,106,247,0.15); border-radius:3px 3px 0 0; height:60%; border-top:2px solid rgba(124,106,247,0.4);"></div>
-            <div style="flex:1; background:rgba(124,106,247,0.15); border-radius:3px 3px 0 0; height:85%; border-top:2px solid rgba(124,106,247,0.6);"></div>
-          </div>
-          <div style="display:flex; justify-content:space-between; margin-top:0.3rem;">
-            <span style="font-size:0.58rem; color:#555;">MON</span>
-            <span style="font-size:0.58rem; color:#555;">TUE</span>
-            <span style="font-size:0.58rem; color:#555;">WED</span>
-            <span style="font-size:0.58rem; color:#7c6af7; font-weight:700;">NOW</span>
-            <span style="font-size:0.58rem; color:#555;">—</span>
-            <span style="font-size:0.58rem; color:#555;">—</span>
-            <span style="font-size:0.58rem; color:#555;">—</span>
+          <!-- Bottom stats -->
+          <div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:0.4rem; margin-top:0.65rem;">
+            <div style="text-align:center; background:rgba(255,255,255,0.025); border:1px solid rgba(255,255,255,0.06); border-radius:8px; padding:0.5rem 0.25rem;">
+              <p style="font-size:0.88rem; font-weight:700; color:var(--heading); margin:0; font-family:var(--mono);">1.2k</p>
+              <p style="font-size:0.58rem; color:var(--text-mute); margin:0.1rem 0 0; letter-spacing:0.02em;">collected</p>
+            </div>
+            <div style="text-align:center; background:rgba(255,255,255,0.025); border:1px solid rgba(255,255,255,0.06); border-radius:8px; padding:0.5rem 0.25rem;">
+              <p style="font-size:0.88rem; font-weight:700; color:var(--heading); margin:0; font-family:var(--mono);">3</p>
+              <p style="font-size:0.58rem; color:var(--text-mute); margin:0.1rem 0 0; letter-spacing:0.02em;">sources</p>
+            </div>
+            <div style="text-align:center; background:rgba(118,131,251,0.07); border:1px solid rgba(118,131,251,0.18); border-radius:8px; padding:0.5rem 0.25rem;">
+              <p style="font-size:0.88rem; font-weight:700; color:#8b9cf7; margin:0; font-family:var(--mono);">5m</p>
+              <p style="font-size:0.58rem; color:var(--text-mute); margin:0.1rem 0 0; letter-spacing:0.02em;">cycle</p>
+            </div>
           </div>
         </div>
         <style>
-          @keyframes sp-pulse { 0%,100%{opacity:1} 50%{opacity:0.5} }
-          @keyframes sp-blink { 0%,100%{opacity:1} 50%{opacity:0} }
-          .sp-cursor { animation: sp-blink 1s step-end infinite; }
-          .sp-line { animation: sp-fadein 0.5s ease both; }
-          @keyframes sp-fadein { from{opacity:0;transform:translateX(-4px)} to{opacity:1;transform:none} }
+          @keyframes sp-pulse { 0%,100%{opacity:1} 50%{opacity:0.4} }
         </style>
       </div>
     </div>
@@ -175,10 +181,45 @@
   <!-- Service 02: centree -->
   <article class="linear-card reveal reveal-d1" style="margin-bottom:1.25rem;">
     <div style="display:grid; grid-template-columns:1fr 1fr; min-height:320px;">
-      <div style="display:flex; align-items:center; justify-content:center; padding:2rem; border-right:1px solid var(--border); background:linear-gradient(135deg,rgba(5,150,105,0.06),transparent); order:-1;">
-        <div style="text-align:center;">
-          <div style="width:56px; height:56px; background:#059669; border-radius:14px; display:flex; align-items:center; justify-content:center; color:#fff; font-size:1.4rem; font-weight:800; margin:0 auto 1rem; letter-spacing:-0.04em;">C</div>
-          <span style="font-family:var(--mono); font-size:0.72rem; color:#059669; letter-spacing:0.06em;">FREELANCER OS</span>
+      <!-- centree: Mini Dashboard UI -->
+      <div style="display:flex; align-items:center; justify-content:center; padding:2rem; border-right:1px solid var(--border); background:linear-gradient(135deg,rgba(5,150,105,0.06),transparent); order:-1; overflow:hidden;">
+        <div style="width:100%; max-width:260px;">
+          <!-- Top stat row -->
+          <div style="display:grid; grid-template-columns:1fr 1fr; gap:0.45rem; margin-bottom:0.6rem;">
+            <div style="background:rgba(5,150,105,0.1); border:1px solid rgba(5,150,105,0.22); border-radius:10px; padding:0.65rem 0.8rem;">
+              <p style="font-size:1.05rem; font-weight:700; color:#34d399; margin:0; font-family:var(--mono); letter-spacing:-0.02em;">12</p>
+              <p style="font-size:0.6rem; color:rgba(52,211,153,0.6); margin:0.1rem 0 0;">클라이언트</p>
+            </div>
+            <div style="background:rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.07); border-radius:10px; padding:0.65rem 0.8rem;">
+              <p style="font-size:1.05rem; font-weight:700; color:var(--heading); margin:0; font-family:var(--mono); letter-spacing:-0.02em;">3</p>
+              <p style="font-size:0.6rem; color:var(--text-mute); margin:0.1rem 0 0;">진행 중</p>
+            </div>
+          </div>
+          <!-- Quote card -->
+          <div style="background:rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.08); border-radius:12px; padding:0.875rem; margin-bottom:0.5rem;">
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:0.5rem;">
+              <span style="font-size:0.65rem; font-weight:600; color:var(--text-mute); font-family:var(--mono);">견적서 #024</span>
+              <span style="font-size:0.6rem; background:rgba(251,191,36,0.12); color:#f59e0b; border:1px solid rgba(251,191,36,0.2); padding:0.15rem 0.45rem; border-radius:4px; font-weight:600;">대기 중</span>
+            </div>
+            <p style="font-size:0.8rem; font-weight:600; color:var(--heading); margin:0 0 0.2rem; letter-spacing:-0.01em;">웹사이트 리뉴얼</p>
+            <p style="font-size:0.67rem; color:var(--text-mute); margin:0 0 0.65rem;">㈜ 스타트업 코리아 · D-3</p>
+            <div style="display:flex; justify-content:flex-end;">
+              <span style="font-size:0.9rem; font-weight:700; color:#34d399; font-family:var(--mono);">₩2,400,000</span>
+            </div>
+          </div>
+          <!-- Project list -->
+          <div style="display:flex; flex-direction:column; gap:0.35rem;">
+            <div style="display:flex; align-items:center; gap:0.55rem; padding:0.4rem 0;">
+              <span style="width:7px; height:7px; border-radius:50%; background:#34d399; flex-shrink:0;"></span>
+              <span style="font-size:0.7rem; color:var(--text-sub); flex:1;">앱 디자인 리뉴얼</span>
+              <span style="font-size:0.62rem; color:#34d399; font-weight:600;">진행 중</span>
+            </div>
+            <div style="display:flex; align-items:center; gap:0.55rem; padding:0.4rem 0; border-top:1px solid rgba(255,255,255,0.05);">
+              <span style="width:7px; height:7px; border-radius:50%; background:rgba(255,255,255,0.15); flex-shrink:0;"></span>
+              <span style="font-size:0.7rem; color:var(--text-mute); flex:1;">서버 마이그레이션</span>
+              <span style="font-size:0.62rem; color:var(--text-mute);">대기</span>
+            </div>
+          </div>
         </div>
       </div>
       <div style="padding:2.5rem;">
@@ -205,8 +246,50 @@
   <!-- Project 03: Zero-Trust Backbone -->
   <article class="linear-card reveal reveal-d1" style="margin-bottom:1.25rem;">
     <div style="display:grid; grid-template-columns:1fr 1fr; min-height:320px;">
-      <div style="display:flex; align-items:center; justify-content:center; padding:2rem; border-right:1px solid var(--border); background:linear-gradient(135deg,rgba(34,197,94,0.04),transparent); order:-1;">
-        <span style="font-family:var(--mono); font-size:0.78rem; color:var(--text-mute);">Architecture Diagram...</span>
+      <!-- Zero-Trust: Network topology UI -->
+      <div style="display:flex; align-items:center; justify-content:center; padding:2rem; border-right:1px solid var(--border); background:linear-gradient(135deg,rgba(34,197,94,0.04),transparent); order:-1; overflow:hidden;">
+        <div style="width:100%; max-width:260px; font-family:var(--mono);">
+          <!-- Node map -->
+          <div style="position:relative; height:140px; margin-bottom:0.75rem;">
+            <!-- Center node -->
+            <div style="position:absolute; left:50%; top:50%; transform:translate(-50%,-50%); width:44px; height:44px; border-radius:50%; background:rgba(34,197,94,0.15); border:1.5px solid rgba(34,197,94,0.5); display:flex; align-items:center; justify-content:center; z-index:2;">
+              <span style="font-size:0.58rem; color:#4ade80; font-weight:700; text-align:center; line-height:1.2;">crode<br>node</span>
+            </div>
+            <!-- Orbit nodes -->
+            <div style="position:absolute; left:12%; top:15%; width:38px; height:38px; border-radius:10px; background:rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.1); display:flex; align-items:center; justify-content:center;">
+              <span style="font-size:0.55rem; color:var(--text-mute); text-align:center; line-height:1.2;">Oracle<br>Cloud</span>
+            </div>
+            <div style="position:absolute; right:10%; top:10%; width:38px; height:38px; border-radius:10px; background:rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.1); display:flex; align-items:center; justify-content:center;">
+              <span style="font-size:0.55rem; color:var(--text-mute); text-align:center; line-height:1.2;">On-<br>Prem</span>
+            </div>
+            <div style="position:absolute; left:8%; bottom:15%; width:38px; height:38px; border-radius:10px; background:rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.1); display:flex; align-items:center; justify-content:center;">
+              <span style="font-size:0.55rem; color:var(--text-mute); text-align:center; line-height:1.2;">CF<br>Proxy</span>
+            </div>
+            <div style="position:absolute; right:12%; bottom:12%; width:38px; height:38px; border-radius:10px; background:rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.1); display:flex; align-items:center; justify-content:center;">
+              <span style="font-size:0.55rem; color:var(--text-mute); text-align:center; line-height:1.2;">VPN<br>Gate</span>
+            </div>
+            <!-- SVG lines -->
+            <svg style="position:absolute;inset:0;width:100%;height:100%;" viewBox="0 0 260 140" preserveAspectRatio="none">
+              <line x1="50" y1="35" x2="130" y2="70" stroke="rgba(34,197,94,0.2)" stroke-width="1" stroke-dasharray="4 3"/>
+              <line x1="210" y1="28" x2="130" y2="70" stroke="rgba(34,197,94,0.2)" stroke-width="1" stroke-dasharray="4 3"/>
+              <line x1="40" y1="112" x2="130" y2="70" stroke="rgba(34,197,94,0.2)" stroke-width="1" stroke-dasharray="4 3"/>
+              <line x1="218" y1="115" x2="130" y2="70" stroke="rgba(34,197,94,0.2)" stroke-width="1" stroke-dasharray="4 3"/>
+            </svg>
+          </div>
+          <!-- Status rows -->
+          <div style="display:flex; flex-direction:column; gap:0.3rem;">
+            <div style="display:flex; align-items:center; gap:0.5rem; padding:0.35rem 0.6rem; background:rgba(34,197,94,0.06); border:1px solid rgba(34,197,94,0.15); border-radius:6px;">
+              <span style="width:5px;height:5px;border-radius:50%;background:#4ade80;flex-shrink:0;"></span>
+              <span style="font-size:0.62rem; color:#4ade80; flex:1;">Zero Trust posture</span>
+              <span style="font-size:0.62rem; color:#4ade80; font-weight:700;">PASS</span>
+            </div>
+            <div style="display:flex; align-items:center; gap:0.5rem; padding:0.35rem 0.6rem; background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.07); border-radius:6px;">
+              <span style="width:5px;height:5px;border-radius:50%;background:#4ade80;flex-shrink:0;"></span>
+              <span style="font-size:0.62rem; color:var(--text-sub); flex:1;">Traffic signature</span>
+              <span style="font-size:0.62rem; color:var(--text-mute); font-weight:700;">CLEAN</span>
+            </div>
+          </div>
+        </div>
       </div>
       <div style="padding:2.5rem;">
         <div style="display:flex; align-items:center; gap:0.75rem; margin-bottom:1.25rem;">
