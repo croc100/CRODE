@@ -38,54 +38,76 @@
 <div class="container">
 
   <!-- Header -->
-  <section style="margin-bottom:4rem;">
-    <div class="badge-tag badge-green">Interactive Sandbox</div>
-    <h1 class="page-title">Where Code Meets<br>Interaction.</h1>
-    <p class="page-sub">사용자와 기술의 접점에서 발생하는 인터랙티브한 경험을 실험합니다.<br>이곳의 프로젝트들은 완성을 향한 과정이거나, 순수한 호기심의 산물입니다.</p>
+  <section style="margin-bottom:3.5rem;">
+    <p class="page-eyebrow">Experiment Log</p>
+    <h1 class="page-title">Lab.</h1>
+    <p class="page-sub">브라우저 환경에서 진행 중이거나 완성된 인터랙션 실험들.</p>
   </section>
 
-  <!-- Lab Modules -->
-  <div style="display:grid; grid-template-columns:repeat(auto-fill,minmax(420px,1fr)); gap:1.25rem;">
+  <!-- Log -->
+  <div class="linear-card" style="overflow:hidden; margin-bottom:2rem;">
 
-    <!-- R2K -->
-    <div class="linear-card reveal" style="border-top:2px solid var(--green);">
-      <div style="display:flex; align-items:center; justify-content:space-between; padding:0.9rem 1.5rem; border-bottom:1px solid var(--border); background:rgba(255,255,255,0.015);">
-        <span style="font-family:var(--mono); font-size:0.72rem; font-weight:700; color:var(--green);">EXP_01 // R2K</span>
-        <div style="display:flex; align-items:center; gap:0.5rem;">
-          <span style="font-family:var(--mono); font-size:0.7rem; color:var(--text-mute);">STATUS:</span>
+    <!-- Entry 01: r2k -->
+    <div class="reveal" style="padding:1.75rem 2rem; border-bottom:1px solid var(--border);">
+      <div style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:0.75rem; margin-bottom:1rem;">
+        <div style="display:flex; align-items:center; gap:0.75rem; flex-wrap:wrap;">
+          <span style="font-family:var(--mono); font-size:0.68rem; color:var(--text-mute);">EXP_01</span>
+          <span style="width:1px; height:12px; background:var(--border); display:inline-block;"></span>
+          <span style="font-size:1rem; font-weight:700; color:var(--heading); letter-spacing:-0.02em;">Rhythm to Key</span>
+          <span style="font-family:var(--mono); font-size:0.68rem; color:var(--text-mute);">v1.2</span>
+        </div>
+        <div style="display:flex; align-items:center; gap:0.65rem;">
+          <span style="font-family:var(--mono); font-size:0.68rem; color:var(--text-mute);">2026.03</span>
           <span class="status-badge s-live"><span class="status-dot dot-live"></span>LIVE</span>
         </div>
       </div>
-      <div style="padding:1.75rem; display:flex; flex-direction:column; gap:1rem; min-height:220px;">
-        <h3 style="font-size:1.05rem; font-weight:700; color:var(--heading);">Rhythm to Key (r2k)</h3>
-        <p style="font-size:0.87rem; color:var(--text-dim); line-height:1.7; flex:1;">
-          사용자의 키보드 입력과 리듬을 동기화하는 웹 기반 인터랙티브 미디어.<br>
-          <span style="color:var(--text-mute); font-size:0.83rem;">브라우저 환경에서의 지연 시간 최소화와 Audio API 활용에 초점을 맞춘 실험입니다.</span>
-        </p>
-        <div>
-          <button class="btn-ghost" style="font-family:var(--mono); font-size:0.8rem;">&gt;_ Execute_r2k</button>
+      <p style="font-size:0.875rem; color:var(--text-dim); line-height:1.75; margin-bottom:1.25rem; max-width:600px;">
+        키보드 입력과 리듬을 동기화하는 브라우저 인터랙티브. Web Audio API 기반으로 입력 지연을 최소화하는 데 초점을 맞췄다.
+      </p>
+      <div style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:0.75rem;">
+        <div style="display:flex; gap:0.4rem; flex-wrap:wrap;">
+          <span class="tech-badge">Web Audio API</span>
+          <span class="tech-badge">Vanilla JS</span>
+          <span class="tech-badge">Browser</span>
         </div>
+        <a href="#" class="btn-ghost" style="font-size:0.82rem;">Launch &nbsp;→</a>
       </div>
     </div>
 
-    <!-- Tetris Core -->
-    <div class="linear-card reveal reveal-d1" style="border-top:2px solid var(--yellow);">
-      <div style="display:flex; align-items:center; justify-content:space-between; padding:0.9rem 1.5rem; border-bottom:1px solid var(--border); background:rgba(255,255,255,0.015);">
-        <span style="font-family:var(--mono); font-size:0.72rem; font-weight:700; color:var(--yellow);">EXP_02 // TETRIS_CORE</span>
-        <div style="display:flex; align-items:center; gap:0.5rem;">
-          <span style="font-family:var(--mono); font-size:0.7rem; color:var(--text-mute);">STATUS:</span>
+    <!-- Entry 02: Tetris -->
+    <div class="reveal reveal-d1" style="padding:1.75rem 2rem; border-bottom:1px solid var(--border);">
+      <div style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:0.75rem; margin-bottom:1rem;">
+        <div style="display:flex; align-items:center; gap:0.75rem; flex-wrap:wrap;">
+          <span style="font-family:var(--mono); font-size:0.68rem; color:var(--text-mute);">EXP_02</span>
+          <span style="width:1px; height:12px; background:var(--border); display:inline-block;"></span>
+          <span style="font-size:1rem; font-weight:700; color:var(--heading); letter-spacing:-0.02em;">Tetris v2</span>
+          <span style="font-family:var(--mono); font-size:0.68rem; color:var(--text-mute);">v0.8</span>
+        </div>
+        <div style="display:flex; align-items:center; gap:0.65rem;">
+          <span style="font-family:var(--mono); font-size:0.68rem; color:var(--text-mute);">2026.01</span>
           <span class="status-badge s-wip"><span class="status-dot dot-wip"></span>REFACTORING</span>
         </div>
       </div>
-      <div style="padding:1.75rem; display:flex; flex-direction:column; gap:1rem; min-height:220px;">
-        <h3 style="font-size:1.05rem; font-weight:700; color:var(--heading);">Logic Refactoring: Tetris v2</h3>
-        <p style="font-size:0.87rem; color:var(--text-dim); line-height:1.7; flex:1;">
-          비즈니스 로직과 렌더링 엔진을 완벽히 분리한 Decoupled Architecture 설계.<br>
-          <span style="color:var(--text-mute); font-size:0.83rem;">프레임 드랍 없는 고속 렌더링을 위해 가상 캔버스와 상태 스냅샷 알고리즘을 적용한 샌드박스입니다.</span>
-        </p>
-        <div>
-          <button disabled style="padding:0.45rem 1rem; background:transparent; border:1px dashed var(--border); color:var(--text-mute); font-family:var(--mono); font-size:0.8rem; border-radius:6px; cursor:not-allowed;">&gt;_ Under_Maintenance</button>
+      <p style="font-size:0.875rem; color:var(--text-dim); line-height:1.75; margin-bottom:1.25rem; max-width:600px;">
+        비즈니스 로직과 렌더링 엔진을 분리한 구조로 재설계 중. 가상 캔버스 + 상태 스냅샷 방식으로 프레임 드랍 없는 렌더링을 목표로 한다.
+      </p>
+      <div style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:0.75rem;">
+        <div style="display:flex; gap:0.4rem; flex-wrap:wrap;">
+          <span class="tech-badge">Canvas 2D</span>
+          <span class="tech-badge">Vanilla JS</span>
+          <span class="tech-badge">State Machine</span>
         </div>
+        <button disabled style="padding:0.4rem 1rem; background:transparent; border:1px dashed var(--border); color:var(--text-mute); font-size:0.82rem; border-radius:6px; cursor:not-allowed;">작업 중</button>
+      </div>
+    </div>
+
+    <!-- Entry 03: placeholder -->
+    <div class="reveal reveal-d2" style="padding:1.5rem 2rem; opacity:0.45;">
+      <div style="display:flex; align-items:center; gap:0.75rem;">
+        <span style="font-family:var(--mono); font-size:0.68rem; color:var(--text-mute);">EXP_03</span>
+        <span style="width:1px; height:12px; background:var(--border); display:inline-block;"></span>
+        <span style="font-family:var(--mono); font-size:0.8rem; color:var(--text-mute);">// 다음 실험을 준비 중입니다.</span>
+        <span class="status-badge s-wip" style="margin-left:auto;"><span class="status-dot dot-wip"></span>PLANNING</span>
       </div>
     </div>
 
