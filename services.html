@@ -128,8 +128,51 @@
         </div>
         <a class="btn-ghost" href="https://setpoint.kr" target="_blank" rel="noopener" style="font-size:0.82rem;">Launch System &nbsp;↗</a>
       </div>
-      <div style="display:flex; align-items:center; justify-content:center; padding:2rem; border-left:1px solid var(--border); background:linear-gradient(135deg,rgba(118,131,251,0.04),transparent);">
-        <span style="font-family:var(--mono); font-size:0.78rem; color:var(--text-mute);">System Visualization...</span>
+      <div style="display:flex; align-items:center; justify-content:center; padding:2rem; border-left:1px solid var(--border); background:linear-gradient(135deg,rgba(118,131,251,0.04),transparent); overflow:hidden; position:relative;">
+        <div style="width:100%; max-width:260px; font-family:var(--mono);">
+          <!-- 터미널 헤더 -->
+          <div style="background:#1e1e2e; border-radius:10px 10px 0 0; padding:0.5rem 0.75rem; display:flex; align-items:center; gap:0.4rem; border:1px solid #2d2d3f; border-bottom:none;">
+            <span style="width:10px;height:10px;border-radius:50%;background:#ff5f57;display:inline-block;"></span>
+            <span style="width:10px;height:10px;border-radius:50%;background:#febc2e;display:inline-block;"></span>
+            <span style="width:10px;height:10px;border-radius:50%;background:#28c840;display:inline-block;"></span>
+            <span style="font-size:0.62rem; color:#555; margin-left:0.5rem;">setpoint — data stream</span>
+          </div>
+          <!-- 터미널 바디 -->
+          <div style="background:#13131f; border-radius:0 0 10px 10px; padding:1rem; border:1px solid #2d2d3f; font-size:0.7rem; line-height:1.9;">
+            <div><span style="color:#555;">$</span> <span style="color:#7c6af7;">fetch</span> <span style="color:#e2e8f0;">--source community</span></div>
+            <div style="color:#28c840;" class="sp-line">✓ reddit       <span style="color:#555;">+247</span></div>
+            <div style="color:#28c840;" class="sp-line">✓ dcinside     <span style="color:#555;">+891</span></div>
+            <div style="color:#28c840;" class="sp-line">✓ theqoo       <span style="color:#555;">+134</span></div>
+            <div style="color:#febc2e;" class="sp-line">⟳ filtering    <span style="color:#555;">1,272 items</span></div>
+            <div style="color:#7c6af7;" class="sp-cursor">▌</div>
+          </div>
+          <!-- 미니 바 차트 -->
+          <div style="margin-top:0.75rem; display:flex; align-items:flex-end; gap:4px; height:40px;">
+            <div style="flex:1; background:rgba(124,106,247,0.15); border-radius:3px 3px 0 0; height:55%; border-top:2px solid rgba(124,106,247,0.4);"></div>
+            <div style="flex:1; background:rgba(124,106,247,0.15); border-radius:3px 3px 0 0; height:80%; border-top:2px solid rgba(124,106,247,0.6);"></div>
+            <div style="flex:1; background:rgba(124,106,247,0.15); border-radius:3px 3px 0 0; height:45%; border-top:2px solid rgba(124,106,247,0.4);"></div>
+            <div style="flex:1; background:rgba(124,106,247,0.25); border-radius:3px 3px 0 0; height:100%; border-top:2px solid #7c6af7; animation:sp-pulse 2s ease-in-out infinite;"></div>
+            <div style="flex:1; background:rgba(124,106,247,0.15); border-radius:3px 3px 0 0; height:70%; border-top:2px solid rgba(124,106,247,0.5);"></div>
+            <div style="flex:1; background:rgba(124,106,247,0.15); border-radius:3px 3px 0 0; height:60%; border-top:2px solid rgba(124,106,247,0.4);"></div>
+            <div style="flex:1; background:rgba(124,106,247,0.15); border-radius:3px 3px 0 0; height:85%; border-top:2px solid rgba(124,106,247,0.6);"></div>
+          </div>
+          <div style="display:flex; justify-content:space-between; margin-top:0.3rem;">
+            <span style="font-size:0.58rem; color:#555;">MON</span>
+            <span style="font-size:0.58rem; color:#555;">TUE</span>
+            <span style="font-size:0.58rem; color:#555;">WED</span>
+            <span style="font-size:0.58rem; color:#7c6af7; font-weight:700;">NOW</span>
+            <span style="font-size:0.58rem; color:#555;">—</span>
+            <span style="font-size:0.58rem; color:#555;">—</span>
+            <span style="font-size:0.58rem; color:#555;">—</span>
+          </div>
+        </div>
+        <style>
+          @keyframes sp-pulse { 0%,100%{opacity:1} 50%{opacity:0.5} }
+          @keyframes sp-blink { 0%,100%{opacity:1} 50%{opacity:0} }
+          .sp-cursor { animation: sp-blink 1s step-end infinite; }
+          .sp-line { animation: sp-fadein 0.5s ease both; }
+          @keyframes sp-fadein { from{opacity:0;transform:translateX(-4px)} to{opacity:1;transform:none} }
+        </style>
       </div>
     </div>
   </article>
