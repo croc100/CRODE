@@ -1,0 +1,97 @@
+{% load static %}
+<!doctype html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="{% static 'img/favicon.ico' %}" type="image/x-icon">
+    <link rel="apple-touch-icon" href="{% static 'img/favicon.ico' %}">
+    <title>{% block title %}CRODE{% endblock %}</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="{% static 'css/style.css' %}" rel="stylesheet">
+
+    <meta name="naver-site-verification" content="9ebe1567bced245e490a74f02a318e9766935915" />
+
+    {% block extra_head %}{% endblock %}
+</head>
+<body>
+    <div class="hero-glow"></div>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-transparent fixed-top linear-nav py-3">
+      <div class="container">
+        <a class="navbar-brand fw-bold fs-4 d-flex align-items-center" href="/">
+            <img src="{% static 'img/img.png' %}" alt="CRODE" width="28" height="28" class="me-2 rounded-1" style="object-fit: cover;"> 
+            <span style="letter-spacing: -0.02em; color: var(--linear-heading);">CRODE</span>
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto gap-3">
+            <li class="nav-item"><a class="nav-link {% if request.path == '/projects/' %}text-white fw-bold{% endif %}" href="{% url 'projects' %}">Projects</a></li>
+            <li class="nav-item"><a class="nav-link {% if request.path == '/lab/' %}text-white fw-bold{% endif %}" href="{% url 'lab' %}">Lab</a></li>
+            <li class="nav-item"><a class="nav-link {% if request.path == '/lib/' %}text-white fw-bold{% endif %}" href="{% url 'lib' %}">Lib</a></li>
+            <li class="nav-item ms-lg-3">
+                <button class="btn btn-sm btn-outline-light px-3 contact-btn" data-bs-toggle="modal" data-bs-target="#contactModal">Contact</button>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <main class="main-content text-center container">
+        {% block content %}{% endblock %}
+    </main>
+
+    <div class="modal fade" id="contactModal" tabindex="-1" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content border-0" style="background: rgba(13, 13, 18, 0.95); backdrop-filter: blur(20px); border: 1px solid rgba(255,255,255,0.1) !important;">
+          <div class="modal-header border-bottom border-secondary border-opacity-25 p-4">
+            <h5 class="modal-title text-white fw-bold" style="letter-spacing: -0.02em;">Contact Information</h5>
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+            <div class="modal-body p-4 text-start">
+                <div class="mb-4">
+                    <label class="text-accent small mb-2 d-block" style="font-family: 'JetBrains Mono'; font-size: 0.7rem; color: var(--linear-primary) !important;">[ OFFICIAL_EMAIL ]</label>
+                    <div class="d-flex align-items-center justify-content-between p-3 rounded-2" 
+                         style="background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.1);">
+                        <span class="text-white font-monospace" style="font-size: 1rem; letter-spacing: 0.05em;">admin@crode.net</span>
+                        <button class="btn btn-sm px-3" 
+                                style="background: var(--linear-primary); color: white; border: none; font-size: 0.8rem; font-weight: 600;" 
+                                onclick="copyToClipboard('admin@crode.net')">Copy</button>
+                    </div>
+                </div>
+                <p class="small mb-0" style="color: var(--linear-text-dim); line-height: 1.6;">
+                    시스템 설계, 인프라 구축 및 비즈니스 협업 문의는 위 주소로 연락 부탁드립니다. 
+                    순차적으로 확인 후 회신 드립니다.
+                </p>
+          </div>  
+         </div>
+      </div>
+    </div>
+
+    <footer class="container py-4 border-top border-secondary border-opacity-25">
+        <div class="d-flex justify-content-between align-items-center">
+            <span class="footer-text small">© {% now "Y" %} CRODE. All rights reserved.</span>
+            <div class="d-flex gap-3">
+                <a href="https://github.com/croc100/CRODE" target="_blank" class="footer-link small">GitHub</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="{% static 'js/main.js' %}"></script>
+    
+    <script>
+    function copyToClipboard(text) {
+        navigator.clipboard.writeText(text).then(() => {
+            alert("이메일 주소가 복사되었습니다.");
+        });
+    }
+    </script>
+    
+    {% block extra_scripts %}{% endblock %}
+</body>
+</html>
